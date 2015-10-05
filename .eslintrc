@@ -1,0 +1,64 @@
+/*
+
+0 - turn the rule off
+1 - turn the rule on as a warning (doesn't affect exit code)
+2 - turn the rule on as an error (exit code is 1 when triggered)
+
+*/
+
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "babel"
+  ],
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+    // Strict mode
+    "strict": [2, "never"],
+
+    // Code style
+    "indent": [2, "tab"],
+    "quotes": [2, "single"],
+
+    // React
+    "react/display-name": 0,
+    "react/jsx-boolean-value": 1,
+    "react/jsx-no-undef": 1,
+    "jsx-quotes": 1,
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/no-did-mount-set-state": 1,
+    "react/no-did-update-set-state": 1,
+    "react/no-multi-comp": 1,
+    "react/no-unknown-property": 1,
+    "react/prop-types": 1,
+    "react/self-closing-comp": 1,
+    "react/sort-comp": 1,
+    "react/wrap-multilines": 1,
+    "react/react-in-jsx-scope": 2,
+
+    // babel
+    "block-scoped-var": 1,
+    "babel/object-shorthand": 1,
+    // these show errors when using await - they look to be designed for *await
+    //"babel/generator-star": 1,
+    //"babel/generator-star-spacing": 1,
+    "object-curly-spacing": [1, "always"],
+    "computed-property-spacing": 1,
+    "array-bracket-spacing": [1, "never"],
+
+    // immutable.js
+    // this is not compabible with immutable.js
+    "babel/new-cap": 0,
+    // this is not compabible with immutable.js
+    "new-cap": 0
+  }
+}
